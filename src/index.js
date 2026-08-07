@@ -1,23 +1,50 @@
 import './styles.css';
 import _ from 'lodash';
-import logo from './assets/images/logo.png';
+import bgImage from './assets/images/bg.png';
 
-function component() {
-  const element = document.createElement('div');
+const featuresData = [
+  { title: 'Webpack 5 🚀', desc: 'Blazing fast builds with content hashing and clean architecture.' },
+  { title: 'Assets 🖼️', desc: 'Seamlessly loading images and local fonts using asset modules.' },
+  { title: 'Lodash 🛠️', desc: 'Optimized chunk splitting for vendor files to reduce load time.' }
+];
 
-  // Використання зовнішньої бібліотеки (lodash)
-  element.innerHTML = _.join(['Created', 'with', 'Lodash'], ' ');
-  element.classList.add('lodash-text');
+function initApp() {
+  const container = document.getElementById('app-container');
+  
+  const title = document.createElement('h1');
+  title.textContent = 'Webpack in Action';
+  
+  const desc = document.createElement('p');
+  desc.className = 'description';
+  desc.textContent = 'This modern UI is bundled entirely through Webpack. It demonstrates dynamic CSS styling, glassmorphism, background images and vendor splitting in real-time.';
+  
+  const featuresBox = document.createElement('div');
+  featuresBox.className = 'features';
+  
+  // Використовуємо Lodash (винесений в окремий чанк)
+  _.forEach(featuresData, (feature) => {
+    const card = document.createElement('div');
+    card.className = 'feature-card';
+    card.innerHTML = `<h3>${feature.title}</h3><p>${feature.desc}</p>`;
+    featuresBox.appendChild(card);
+  });
+  
+  const btn = document.createElement('button');
+  btn.className = 'interactive-btn';
+  btn.textContent = 'Click to test Lodash logic';
+  
+  btn.addEventListener('click', () => {
+    const randomFeature = _.sample(featuresData);
+    btn.textContent = `Random: ${randomFeature.title}!`;
+    setTimeout(() => { btn.textContent = 'Click to test Lodash logic'; }, 2000);
+  });
+  
+  const fontTest = document.createElement('div');
+  fontTest.className = 'local-font-test';
+  fontTest.textContent = 'Local font bundled successfully by Webpack asset modules.';
 
-  // Робота з зображенням через JS
-  const myIcon = new Image();
-  myIcon.src = logo;
-  myIcon.width = 100;
-  myIcon.style.marginBottom = '10px';
-
-  element.prepend(myIcon);
-
-  return element;
+  container.append(title, desc, featuresBox, btn, fontTest);
 }
 
-document.getElementById('content').appendChild(component());
+// Запускаємо рендер
+document.addEventListener('DOMContentLoaded', initApp);
