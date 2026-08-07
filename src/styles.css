@@ -1,0 +1,42 @@
+/* Підключення локального шрифту */
+@font-face {
+  font-family: 'MyFont';
+  src: url('./assets/fonts/myfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  color: #007bff;
+}
+
+/* Використання зображення в CSS */
+#content {
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  background-image: url('./assets/images/logo.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lodash-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
