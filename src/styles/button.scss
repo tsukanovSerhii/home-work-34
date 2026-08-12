@@ -1,0 +1,24 @@
+$primary: #8a2be2;
+$secondary: #4169e1;
+$shadow-color: rgba(138, 43, 226, 0.4);
+$shadow-hover-color: rgba(138, 43, 226, 0.6);
+$text-color: #fff;
+
+.interactive-btn {
+  margin-top: 35px;
+  padding: 12px 35px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $text-color;
+  background: linear-gradient(45deg, $primary, $secondary);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px $shadow-color;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px $shadow-hover-color;
+  }
+}

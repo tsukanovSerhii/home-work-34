@@ -1,12 +1,9 @@
-import './styles.css';
+import './styles/styles.css';
+import './styles/feature-card.less';
+import './styles/button.scss';
 import _ from 'lodash';
 import bgImage from './assets/images/bg.png';
-
-const featuresData = [
-  { title: 'Webpack 5 🚀', desc: 'Blazing fast builds with content hashing and clean architecture.' },
-  { title: 'Assets 🖼️', desc: 'Seamlessly loading images and local fonts using asset modules.' },
-  { title: 'Lodash 🛠️', desc: 'Optimized chunk splitting for vendor files to reduce load time.' }
-];
+import { featuresData } from './data/data';
 
 function initApp() {
   const container = document.getElementById('app-container');

@@ -3,7 +3,7 @@
 /* Перевірка локальних шрифтів (як того вимагає завдання) */
 @font-face {
   font-family: 'LocalDummy';
-  src: url('./assets/fonts/myfont.woff2') format('woff2');
+  src: url('../assets/fonts/myfont.woff2') format('woff2');
 }
 
 :root {
@@ -22,7 +22,7 @@
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--bg-color);
-  background-image: url('./assets/images/bg.png'); /* Нове згенероване фонове зображення */
+  background-image: url('../assets/images/bg.png'); /* Нове згенероване фонове зображення */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -81,47 +81,7 @@ p.description {
   margin-top: 30px;
 }
 
-.feature-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 25px;
-  flex: 1;
-  min-width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #00f2fe;
-}
-
-.interactive-btn {
-  margin-top: 35px;
-  padding: 12px 35px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #fff;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
-}
-
-.interactive-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.6);
-}
+/* .feature-card and .interactive-btn styles are now imported from LESS and SCSS files */
 
 /* Local font testing div */
 .local-font-test {

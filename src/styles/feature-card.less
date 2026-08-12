@@ -1,0 +1,27 @@
+@card-bg: rgba(255, 255, 255, 0.08);
+@card-border: rgba(255, 255, 255, 0.05);
+@card-hover-bg: rgba(255, 255, 255, 0.12);
+@primary-color: #00f2fe;
+
+.feature-card {
+  background: @card-bg;
+  border: 1px solid @card-border;
+  border-radius: 16px;
+  padding: 25px;
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2);
+    background: @card-hover-bg;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: @primary-color;
+  }
+}
